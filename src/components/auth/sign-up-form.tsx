@@ -38,19 +38,19 @@ const SignUpForm: React.FC = () => {
 					<Logo />
 				</div>
 				<p className="text-sm md:text-base text-body mt-2 mb-8 sm:mb-10">
-					{"common:registration-helper"}{" "}
+					{"helper"}{" "}
 					<Link
 						href={ROUTES.TERMS}
 						className="text-heading underline hover:no-underline focus:outline-none"
 					>
-						{"common:text-terms"}
+						{"terms"}
 					</Link>{" "}
 					&amp;{" "}
 					<Link
 						href={ROUTES.POLICY}
 						className="text-heading underline hover:no-underline focus:outline-none"
 					>
-						{"common:text-policy"}
+						{"policy"}
 					</Link>
 				</p>
 			</div>
@@ -61,33 +61,33 @@ const SignUpForm: React.FC = () => {
 			>
 				<div className="flex flex-col space-y-4">
 					<Input
-						labelKey="forms:label-name"
+						labelKey="name"
 						type="text"
 						variant="solid"
 						{...register("name", {
-							required: "forms:name-required",
+							required: "required",
 						})}
 						errorKey={errors.name?.message}
 					/>
 					<Input
-						labelKey="forms:label-email"
+						labelKey="email"
 						type="email"
 						variant="solid"
 						{...register("email", {
-							required: `${"forms:email-required"}`,
+							required: `${"required"}`,
 							pattern: {
 								value:
 									/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-								message: "forms:email-error",
+								message: "error",
 							},
 						})}
 						errorKey={errors.email?.message}
 					/>
 					<PasswordInput
-						labelKey="forms:label-password"
+						labelKey="password"
 						errorKey={errors.password?.message}
 						{...register("password", {
-							required: `${"forms:password-required"}`,
+							required: `${"required"}`,
 						})}
 					/>
 					<div className="relative">
@@ -97,7 +97,7 @@ const SignUpForm: React.FC = () => {
 							disabled={isLoading}
 							className="h-11 md:h-12 w-full mt-2"
 						>
-							{"common:text-register"}
+							{"register"}
 						</Button>
 					</div>
 				</div>
@@ -105,7 +105,7 @@ const SignUpForm: React.FC = () => {
 			<div className="flex flex-col items-center justify-center relative text-sm text-heading mt-6 mb-3.5">
 				<hr className="w-full border-gray-300" />
 				<span className="absolute -top-2.5 px-2 bg-white">
-					{"common:text-or"}
+					{"or"}
 				</span>
 			</div>
 
@@ -116,7 +116,7 @@ const SignUpForm: React.FC = () => {
 				className="h-11 md:h-12 w-full mt-2.5 bg-facebook hover:bg-facebookHover"
 			>
 				<ImFacebook2 className="text-sm sm:text-base me-1.5" />
-				{"common:text-login-with-facebook"}
+				{"login-with-facebook"}
 			</Button>
 			<Button
 				type="submit"
@@ -125,16 +125,16 @@ const SignUpForm: React.FC = () => {
 				className="h-11 md:h-12 w-full mt-2.5 bg-google hover:bg-googleHover"
 			>
 				<ImGoogle2 className="text-sm sm:text-base me-1.5" />
-				{"common:text-login-with-google"}
+				{"login-with-google"}
 			</Button>
 			<div className="text-sm sm:text-base text-body text-center mt-5 mb-1">
-				{"common:text-have-account"}{" "}
+				{"have-account"}{" "}
 				<button
 					type="button"
 					className="text-sm sm:text-base text-heading underline font-bold hover:no-underline focus:outline-none"
 					onClick={handleSignIn}
 				>
-					{"common:text-login"}
+					{"login"}
 				</button>
 			</div>
 		</div>
